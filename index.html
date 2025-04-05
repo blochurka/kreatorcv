@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kreator CV - KasiaTheRecruiter</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kreator nowoczesnego CV</h1>
+            <p>Stwórz profesjonalne CV dopasowane do Twoich potrzeb</p>
+        </header>
+        
+        <div class="template-selection">
+            <div class="template-card" data-template="classic">
+                <div class="template-image" style="background-image: url('https://via.placeholder.com/250x300/f5f5f5/333333?text=CV+Klasyczne')"></div>
+                <div class="template-info">
+                    <h3>CV Klasyczne</h3>
+                    <p>Tradycyjny, elegancki format odpowiedni dla większości branż i stanowisk.</p>
+                </div>
+            </div>
+            
+            <div class="template-card" data-template="modern">
+                <div class="template-image" style="background-image: url('https://via.placeholder.com/250x300/e0f7fa/333333?text=CV+Nowoczesne')"></div>
+                <div class="template-info">
+                    <h3>CV Nowoczesne</h3>
+                    <p>Minimalistyczny design z akcentami kolorystycznymi dla kreatywnych specjalistów.</p>
+                </div>
+            </div>
+            
+            <div class="template-card" data-template="starter">
+                <div class="template-image" style="background-image: url('https://via.placeholder.com/250x300/f0f4c3/333333?text=CV+Na+Start')"></div>
+                <div class="template-info">
+                    <h3>CV na Start</h3>
+                    <p>Idealny format dla osób wchodzących na rynek pracy lub z niewielkim doświadczeniem.</p>
+                </div>
+            </div>
+            
+            <div class="template-card" data-template="developer">
+                <div class="template-image" style="background-image: url('https://via.placeholder.com/250x300/e8eaf6/333333?text=CV+Programista')"></div>
+                <div class="template-info">
+                    <h3>CV dla Programistów</h3>
+                    <p>Specjalny układ podkreślający umiejętności techniczne i projekty IT.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="cv-editor" class="editor-container">
+            <div class="form-section">
+                <h3>Dane Osobowe</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">Imię</label>
+                        <input type="text" id="firstName" name="firstName">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Nazwisko</label>
+                        <input type="text" id="lastName" name="lastName">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="position">Stanowisko</label>
+                        <input type="text" id="position" name="position" placeholder="np. Front-end Developer">
+                    </div>
+                    <div class="form-group">
+                        <label for="photo">Zdjęcie (opcjonalnie)</label>
+                        <input type="file" id="photo" name="photo">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="location">Lokalizacja</label>
+                        <input type="text" id="location" name="location" placeholder="np. Warszawa, Polska">
+                    </div>
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn (opcjonalnie)</label>
+                        <input type="url" id="linkedin" name="linkedin">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="summary">O mnie</label>
+                    <textarea id="summary" name="summary" placeholder="Krótkie podsumowanie Twojego profilu zawodowego..."></textarea>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h3>Doświadczenie Zawodowe</h3>
+                <div class="dynamic-list" id="experience-list">
+                    <!-- Doświadczenia będą dodawane dynamicznie -->
+                </div>
+                <button class="add-btn" id="add-experience">+ Dodaj doświadczenie</button>
+            </div>
+            
+            <div class="form-section">
+                <h3>Wykształcenie</h3>
+                <div class="dynamic-list" id="education-list">
+                    <!-- Wykształcenie będzie dodawane dynamicznie -->
+                </div>
+                <button class="add-btn" id="add-education">+ Dodaj wykształcenie</button>
+            </div>
+            
+            <div class="form-section">
+                <h3>Umiejętności</h3>
+                <div class="form-group">
+                    <label for="skills">Wpisz swoje umiejętności (oddzielone przecinkami)</label>
+                    <input type="text" id="skills" name="skills" placeholder="np. JavaScript, React, CSS, HTML">
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h3>Języki</h3>
+                <div class="dynamic-list" id="languages-list">
+                    <!-- Języki będą dodawane dynamicznie -->
+                </div>
+                <button class="add-btn" id="add-language">+ Dodaj język</button>
+            </div>
+            
+            <div class="form-section" id="projects-section" style="display: none;">
+                <h3>Projekty</h3>
+                <div class="dynamic-list" id="projects-list">
+                    <!-- Projekty będą dodawane dynamicznie -->
+                </div>
+                <button class="add-btn" id="add-project">+ Dodaj projekt</button>
+            </div>
+            
+            <div class="form-section">
+                <h3>Dodatkowe Informacje</h3>
+                <div class="form-group">
+                    <label for="additional">Dodatkowe osiągnięcia, certyfikaty, kursy itp.</label>
+                    <textarea id="additional" name="additional"></textarea>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="gdpr">Klauzula RODO</label>
+                <textarea id="gdpr" name="gdpr">Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO)).</textarea>
+            </div>
+            
+            <div class="actions">
+                <button class="btn btn-secondary" id="back-btn">Wróć do wyboru szablonu</button>
+                <button class="btn btn-primary" id="preview-btn">Podgląd CV</button>
+            </div>
+        </div>
+        
+        <div id="cv-preview" class="preview-container">
+            <div class="preview-actions">
+                <button class="btn btn-secondary" id="edit-btn">Edytuj</button>
+                <button class="btn btn-primary" id="download-btn">Pobierz PDF</button>
+            </div>
+            
+            <div class="cv-preview" id="cv-document">
+                <!-- Tutaj będzie renderowany podgląd CV -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
